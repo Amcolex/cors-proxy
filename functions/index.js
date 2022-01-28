@@ -44,7 +44,6 @@ exports.cors = functions.https.onRequest((req, res) => {
 
     fetch(url, {
       method: req.method,
-      body: req.get('content-type') === 'application/json' ? JSON.stringify(req.body) : req.body,
       headers: {
         'Content-Type': req.get('Content-Type'),
       },
