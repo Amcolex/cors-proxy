@@ -20,7 +20,7 @@ const blockedPhrases = new RegExp(/porn|sexy/);  // No thank you.
  *
  * This endpoint supports CORS.
  */
-exports.cors = functions.https.onRequest((req, res) => {
+exports.cors = functions.region('europe-west1').https.onRequest((req, res) => {
   cors(req, res, () => {
     console.log('Query:', req.query);
     console.log('Body:', req.body);
